@@ -1,0 +1,6 @@
+framework module PGAudioMessage {
+  umbrella header "PGAudioMessage-umbrella.h"
+
+  export *
+  module * { export * }
+}

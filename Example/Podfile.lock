@@ -1,0 +1,16 @@
+PODS:
+  - PGAudioMessage (0.1.0)
+
+DEPENDENCIES:
+  - PGAudioMessage (from `../`)
+
+EXTERNAL SOURCES:
+  PGAudioMessage:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  PGAudioMessage: 8269677f16c255daaa6abc2b6f92913738582b8d
+
+PODFILE CHECKSUM: 03c15f5668f56bda966468488a3207ed35a2178c
+
+COCOAPODS: 1.10.1
