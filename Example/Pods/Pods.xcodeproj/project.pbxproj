@@ -10,6 +10,8 @@
 		1901F75F26294168008FB125 /* SoundType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1901F75E26294168008FB125 /* SoundType.swift */; };
 		1901F76426294180008FB125 /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1901F76326294180008FB125 /* ErrorType.swift */; };
 		1901F76C262941A4008FB125 /* Result+AudioMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1901F76B262941A4008FB125 /* Result+AudioMessage.swift */; };
+		198A2C98262D4CDC004312BA /* AudioService.Recorder.Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198A2C97262D4CDC004312BA /* AudioService.Recorder.Option.swift */; };
+		19CF4B87262E9D0100781D6F /* AudioService.Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CF4B86262E9D0100781D6F /* AudioService.Constant.swift */; };
 		1D4E778912B24FA1401DF4D975A8ED0E /* PGAudioMessage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC97885683792573D482164D776EC57 /* PGAudioMessage-dummy.m */; };
 		512166D88B97BDB45969367957FD0B65 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6313FA061F27792BB031A0FA95E4B5 /* AudioService.swift */; };
 		603878F1999BBAA32F78D9ABE154A77C /* Pods-PGAudioMessage_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6858F1E03C598C0E7AEF16DB36536FDE /* Pods-PGAudioMessage_Example-dummy.m */; };
@@ -50,6 +52,8 @@
 		1901F75E26294168008FB125 /* SoundType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundType.swift; sourceTree = "<group>"; };
 		1901F76326294180008FB125 /* ErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorType.swift; sourceTree = "<group>"; };
 		1901F76B262941A4008FB125 /* Result+AudioMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+AudioMessage.swift"; sourceTree = "<group>"; };
+		198A2C97262D4CDC004312BA /* AudioService.Recorder.Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AudioService.Recorder.Option.swift; path = PGAudioMessage/Classes/AudioService.Recorder.Option.swift; sourceTree = "<group>"; };
+		19CF4B86262E9D0100781D6F /* AudioService.Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.Constant.swift; sourceTree = "<group>"; };
 		1A91282D4001118E6EB508EA40B883CB /* Pods_PGAudioMessage_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PGAudioMessage_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		260BCCB09EA0E6D471F7C3183B1C2308 /* PGAudioMessage.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = PGAudioMessage.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		2DF32EBC8353749FD8D314FB04E7127E /* Pods-PGAudioMessage_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PGAudioMessage_Example-Info.plist"; sourceTree = "<group>"; };
@@ -148,6 +152,8 @@
 				EE6313FA061F27792BB031A0FA95E4B5 /* AudioService.swift */,
 				B9AFF5FDE0B46560503CB270C89692CE /* AudioService.Player.swift */,
 				05B62D4E98FEDA075DFB045CBD13C842 /* AudioService.Recorder.swift */,
+				198A2C97262D4CDC004312BA /* AudioService.Recorder.Option.swift */,
+				19CF4B86262E9D0100781D6F /* AudioService.Constant.swift */,
 				1901F75E26294168008FB125 /* SoundType.swift */,
 				1901F76326294180008FB125 /* ErrorType.swift */,
 				1901F76B262941A4008FB125 /* Result+AudioMessage.swift */,
@@ -382,6 +388,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19CF4B87262E9D0100781D6F /* AudioService.Constant.swift in Sources */,
 				D49E18EC31B1446A866EDF0F8770339F /* AudioService.Player.swift in Sources */,
 				1901F75F26294168008FB125 /* SoundType.swift in Sources */,
 				82C8E307A6CC3100A5D1641E06D648CD /* AudioService.Recorder.swift in Sources */,
@@ -389,6 +396,7 @@
 				1901F76426294180008FB125 /* ErrorType.swift in Sources */,
 				1D4E778912B24FA1401DF4D975A8ED0E /* PGAudioMessage-dummy.m in Sources */,
 				1901F76C262941A4008FB125 /* Result+AudioMessage.swift in Sources */,
+				198A2C98262D4CDC004312BA /* AudioService.Recorder.Option.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

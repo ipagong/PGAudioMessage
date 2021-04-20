@@ -16,6 +16,8 @@ extension AudioService {
         public var recorder: AVAudioRecorder?
         
         private var completion: Completion?
+        
+        public var options = Option(numberOfChannels: 1, sampleRate: 44100, qualityType: .high, format: .MPEGAAC)
     }
 }
 
@@ -28,22 +30,26 @@ extension AudioService.Recorder {
         FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("recording.m4a")
     }
     
+    public var averagePower: CGFloat? {
+        guard let recorder = self.recorder, recorder.isRecording else { return nil }
+        guard self.options.numberOfChannels > 0 else { return nil }
+        recorder.updateMeters()
+        return Array(0..<self.options.numberOfChannels).compactMap{ CGFloat(recorder.averagePower(forChannel: $0)) }.reduce(0,+) / CGFloat(self.options.numberOfChannels)
+    }
+    
+    public var averagePowerRate: CGFloat? { self.averagePower?.transformToRate() }
+    
     func start(with fileURL: URL? = nil, completion: AudioService.Recorder.Completion? = nil) {
         guard let url = fileURL ?? self.temporaryURL else {
             completion?(Swift.Result.init(url: nil, error: .invalidURL))
             return
         }
-        let settings = [
-            AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
-            AVSampleRateKey: 12000,
-            AVNumberOfChannelsKey: 1,
-            AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
-        ]
         
         self.completion = completion
         
         do {
-            self.recorder = try AVAudioRecorder(url: url, settings: settings)
+            self.recorder = try AVAudioRecorder(url: url, settings: self.options.setting)
+            self.recorder?.isMeteringEnabled = true
             self.recorder?.delegate = self
             self.recorder?.record()
         } catch {
@@ -66,8 +72,7 @@ extension AudioService.Recorder {
         
         self.recorder?.stop()
         self.recorder = nil
-     }
-    
+    }
 }
 
 extension AudioService.Recorder: AVAudioRecorderDelegate {

@@ -28,12 +28,22 @@ extension AudioService.Player {
     
     public var currentTime: TimeInterval { self.player?.currentTime ?? 0 }
     
+    public var averagePower: CGFloat? {
+        guard let player = self.player, player.isPlaying == true else { return nil }
+        guard let count = self.player?.numberOfChannels, count > 0 else { return nil }
+        player.updateMeters()
+        return Array(0..<count).compactMap{ CGFloat(player.averagePower(forChannel: $0)) }.reduce(0,+) / CGFloat(count)
+    }
+    
+    public var averagePowerRate: CGFloat? { self.averagePower?.transformToRate() }
+    
     func start(with soundType: SoundType, completion: AudioService.Player.Completion? = nil) {
         self.completion = completion
         do {
             self.player = try soundType.createPlayer()
             self.player?.delegate = self
             self.player?.prepareToPlay()
+            self.player?.isMeteringEnabled = true
             if let value = self.preferVolume { self.player?.volume = value }
             self.player?.play()
         } catch {

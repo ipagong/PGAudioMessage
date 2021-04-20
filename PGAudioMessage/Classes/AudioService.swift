@@ -53,6 +53,7 @@ extension AudioService {
         
         do {
             try self.session?.setCategory(.playAndRecord, mode: .default)
+            try self.session?.overrideOutputAudioPort(.speaker)
             try self.session?.setActive(true)
         } catch {
             completion?(.invalidSession)
@@ -117,4 +118,8 @@ extension AudioService {
     public func stopPlay() {
         self.player.stop()
     }
+}
+
+extension CGFloat {
+    func transformToRate() -> CGFloat { pow(10, (0.05 * self)) }
 }

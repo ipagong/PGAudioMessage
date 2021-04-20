@@ -99,22 +99,45 @@ class ViewController: UIViewController {
         
         switch self.status {
         case .recording:
-            self.perform(#selector(self.recordTick), with: nil, afterDelay: 0.1)
+            self.recordTick()
         case .playing:
-            self.perform(#selector(self.playTick), with: nil, afterDelay: 0.1)
+            self.playTick()
         default:
-            NSObject.cancelPreviousPerformRequests(withTarget: self)
+            self.cancel()
         }
     }
     
     @objc func recordTick() {
         self.actionButton.setTitle("\(AudioService.shared.recorder.currentTime.stringValue)", for: .normal)
+        self.transformButtonScale(with: AudioService.shared.recorder.averagePowerRate)
+        
         self.perform(#selector(self.recordTick), with: nil, afterDelay: 0.1)
     }
     
     @objc func playTick() {
         self.actionButton.setTitle("\(AudioService.shared.player.currentTime.stringValue) / \(AudioService.shared.player.duration.stringValue)", for: .normal)
+        self.transformButtonScale(with: AudioService.shared.player.averagePowerRate)
+        
         self.perform(#selector(self.playTick), with: nil, afterDelay: 0.1)
+    }
+    
+    func cancel() {
+        self.transformButtonScale()
+        NSObject.cancelPreviousPerformRequests(withTarget: self)
+        
+    }
+    
+    func transformButtonScale(with rate: CGFloat? = nil) {
+        UIView.animate(withDuration: 0.05) { [weak self] in
+            guard let self = self else { return }
+            
+            if let rate = rate {
+                let value = (rate * 3) + 1.0
+                self.actionButton.transform = .init(scaleX: value, y: value)
+            } else {
+                self.actionButton.transform = .identity
+            }
+        }
     }
 }
 
