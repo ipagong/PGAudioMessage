@@ -10,7 +10,7 @@ import Foundation
 import AVFoundation
 
 extension AudioService {
-    public class Player: NSObject {
+    final public class Player: NSObject {
         public typealias Completion = ((Swift.Result<SoundType, ErrorType>) -> ())
         
         public var player: AVAudioPlayer?
@@ -59,7 +59,7 @@ extension AudioService.Player {
     }
      
     private func stopped(with player: AVAudioPlayer?, error: ErrorType?) {
-        self.completion?(.init(sound: SoundType(player: player), error: error))
+        self.completion?(.init(value: SoundType(player: player), error: error))
         self.completion = nil
         
         self.player?.stop()

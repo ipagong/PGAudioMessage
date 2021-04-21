@@ -91,7 +91,7 @@ extension AudioService {
     public func startRecord(with fileURL: URL? = nil, completion: AudioService.Recorder.Completion? = nil) {
         self.confirm{ [weak self] error in
             if let error = error {
-                completion?(.init(url: nil, error: error))
+                completion?(.init(value: nil, error: error))
                 return
             }
             self?.recorder.start(with: fileURL, completion: completion)
@@ -107,7 +107,7 @@ extension AudioService {
     public func startPlay(with sound: SoundType, completion: AudioService.Player.Completion? = nil) {
         self.activation{ [weak self] error in
             if let error = error {
-                completion?(.init(sound: nil, error: error))
+                completion?(.init(value: nil, error: error))
                 return
             }
             

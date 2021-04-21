@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AVFoundation
 
 public enum ErrorType: Error {
     case invalidData
@@ -16,6 +17,6 @@ public enum ErrorType: Error {
     case interruptedRecord
     case interruptedPlay
     
-    case internalError(Error)
+    case internalError(Error?)
     case unknown
 }

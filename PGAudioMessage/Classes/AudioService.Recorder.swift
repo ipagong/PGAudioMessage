@@ -10,7 +10,7 @@ import Foundation
 import AVFoundation
 
 extension AudioService {
-    public class Recorder: NSObject {
+    final public class Recorder: NSObject {
         public typealias Completion = ((Swift.Result<URL, ErrorType>) -> ())
         
         public var recorder: AVAudioRecorder?
@@ -41,7 +41,7 @@ extension AudioService.Recorder {
     
     func start(with fileURL: URL? = nil, completion: AudioService.Recorder.Completion? = nil) {
         guard let url = fileURL ?? self.temporaryURL else {
-            completion?(Swift.Result.init(url: nil, error: .invalidURL))
+            completion?(Swift.Result.init(value: nil, error: ErrorType.invalidURL))
             return
         }
         
@@ -67,7 +67,7 @@ extension AudioService.Recorder {
     private func stopped(with recorder: AVAudioRecorder?, error: ErrorType?) {
         let url = recorder?.url
         
-        self.completion?(Swift.Result.init(url: url, error: error))
+        self.completion?(Swift.Result.init(value: url, error: error))
         self.completion = nil
         
         self.recorder?.stop()

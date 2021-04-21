@@ -18,5 +18,6 @@
   "platforms": {
     "ios": "11.0"
   },
-  "source_files": "PGAudioMessage/Classes/**/*"
+  "source_files": "PGAudioMessage/Classes/**/*",
+  "frameworks": "AVFoundation"
 }

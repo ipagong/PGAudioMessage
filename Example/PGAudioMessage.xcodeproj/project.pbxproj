@@ -272,10 +272,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-PGAudioMessage_Example/Pods-PGAudioMessage_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/PGAudioMessage/PGAudioMessage.framework",
+				"${BUILT_PRODUCTS_DIR}/SoundWave/SoundWave.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PGAudioMessage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SoundWave.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

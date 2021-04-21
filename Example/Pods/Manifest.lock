@@ -1,16 +1,23 @@
 PODS:
   - PGAudioMessage (0.1.0)
+  - SoundWave (0.1.2)
 
 DEPENDENCIES:
   - PGAudioMessage (from `../`)
+  - SoundWave
+
+SPEC REPOS:
+  trunk:
+    - SoundWave
 
 EXTERNAL SOURCES:
   PGAudioMessage:
     :path: "../"
 
 SPEC CHECKSUMS:
-  PGAudioMessage: 8269677f16c255daaa6abc2b6f92913738582b8d
+  PGAudioMessage: eaf99c30a125e18f2fdd35f7974048618289e220
+  SoundWave: 74af192045482ba1b881c6fd063655bb46162fa0
 
-PODFILE CHECKSUM: 03c15f5668f56bda966468488a3207ed35a2178c
+PODFILE CHECKSUM: ef5601d993d720978eb591d42ef0fc3d1c1a9436
 
 COCOAPODS: 1.10.1

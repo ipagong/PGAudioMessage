@@ -3,6 +3,7 @@ use_frameworks!
 platform :ios, '9.0'
 
 target 'PGAudioMessage_Example' do
+  pod 'SoundWave'
   pod 'PGAudioMessage', :path => '../'
 
   target 'PGAudioMessage_Tests' do
