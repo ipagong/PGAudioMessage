@@ -28,6 +28,8 @@ extension AudioService.Player {
     
     public var currentTime: TimeInterval { self.player?.currentTime ?? 0 }
     
+    public var remainTime: TimeInterval { self.duration - self.currentTime }
+    
     public var averagePower: CGFloat? {
         guard let player = self.player, player.isPlaying == true else { return nil }
         guard let count = self.player?.numberOfChannels, count > 0 else { return nil }
@@ -52,7 +54,19 @@ extension AudioService.Player {
         }
     }
     
-    func stop() {
+    public func pause() {
+        guard let player = self.player else { return }
+        guard player.isPlaying == true else { return }
+        player.pause()
+    }
+    
+    public func resume() {
+        guard let player = self.player else { return }
+        guard player.currentTime != 0 else { return }
+        player.play()
+    }
+    
+    public func stop() {
         guard let player = self.player, player.isPlaying == true else { return }
             
         self.stopped(with: player, error: nil)

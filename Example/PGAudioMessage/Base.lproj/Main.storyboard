@@ -20,34 +20,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FYm-OU-8za" customClass="AudioVisualizationView" customModule="PGAudioMessage">
+                                <rect key="frame" x="30" y="219.5" width="315" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="CUq-Z7-Qas"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcH-mC-rqJ">
                                 <rect key="frame" x="137.5" y="517" width="100" height="100"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="lcH-mC-rqJ" secondAttribute="height" multiplier="1:1" id="Dzm-Fa-bKN"/>
                                     <constraint firstAttribute="height" constant="100" id="dFl-nS-3Fs"/>
-                                    <constraint firstAttribute="width" constant="100" id="gVJ-RL-bAO"/>
                                 </constraints>
                                 <state key="normal" title="ON">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6j7-uo-3lH">
+                                <rect key="frame" x="137.5" y="517" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="4bB-zc-4dI"/>
+                                    <constraint firstAttribute="height" constant="100" id="Kxh-kr-SDa"/>
+                                </constraints>
                                 <connections>
-                                    <action selector="onClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="oaP-Fw-h1i"/>
+                                    <action selector="onClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="IaJ-Nb-o9i"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6j7-uo-3lH" firstAttribute="centerY" secondItem="lcH-mC-rqJ" secondAttribute="centerY" id="98A-Hz-aee"/>
+                            <constraint firstItem="FYm-OU-8za" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="30" id="Stj-Oy-FV6"/>
+                            <constraint firstItem="FYm-OU-8za" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" multiplier="0.85" id="bL4-qb-Wm7"/>
+                            <constraint firstItem="6j7-uo-3lH" firstAttribute="centerX" secondItem="lcH-mC-rqJ" secondAttribute="centerX" id="eob-wr-nln"/>
+                            <constraint firstItem="FYm-OU-8za" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="f4F-Mo-wHd"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="lcH-mC-rqJ" secondAttribute="bottom" constant="50" id="hUP-gK-wyu"/>
+                            <constraint firstAttribute="trailing" secondItem="FYm-OU-8za" secondAttribute="trailing" constant="30" id="qnw-yj-JJt"/>
                             <constraint firstItem="lcH-mC-rqJ" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="tfu-2k-6rZ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="actionButton" destination="lcH-mC-rqJ" id="OX0-Mz-5bk"/>
+                        <outlet property="hiddenButton" destination="6j7-uo-3lH" id="Jvc-0l-OdN"/>
+                        <outlet property="waveView" destination="FYm-OU-8za" id="l3D-nC-3wc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="112"/>
+            <point key="canvasLocation" x="132" y="111.99400299850076"/>
         </scene>
     </scenes>
     <resources>

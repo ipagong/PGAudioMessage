@@ -8,11 +8,13 @@
 
 import UIKit
 import PGAudioMessage
+import AVFoundation
 
 class ViewController: UIViewController {
     
     var url: URL?
     
+    @IBOutlet weak var hiddenButton: UIButton!
     @IBOutlet weak var actionButton: UIButton! {
         didSet {
             actionButton.layer.cornerRadius = 50
@@ -21,6 +23,8 @@ class ViewController: UIViewController {
     }
     
     var status: Status = .initialized { didSet { self.updateUI() } }
+    
+    @IBOutlet weak var waveView: AudioVisualizationView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +55,6 @@ class ViewController: UIViewController {
     @IBAction func onClicked(_ sender: Any) {
         switch self.status {
         case .initialized:
-            self.status = .recording
             AudioService.shared.startRecord(with: nil) { [weak self] (result) in
                 guard let self = self else { return }
                 switch result {
@@ -64,13 +67,13 @@ class ViewController: UIViewController {
                     self.status = .initialized
                 }
             }
+            self.status = .recording
             
         case .recording:
             AudioService.shared.stopRecord()
             
         case .recorded:
             guard let url = self.url else { return }
-            self.status = .playing
             AudioService.shared.startPlay(with: .url(url)) { [weak self] result in
                 guard let self = self else { return }
                 switch result {
@@ -82,6 +85,7 @@ class ViewController: UIViewController {
                     self.status = .initialized
                 }
             }
+            self.status = .playing
             
         case .playing:
             self.status = .initialized
@@ -99,8 +103,19 @@ class ViewController: UIViewController {
         
         switch self.status {
         case .recording:
+            self.waveView.reset()
+            self.waveView.audioVisualizationMode = .write
             self.recordTick()
         case .playing:
+            self.waveView.reset()
+            self.waveView.audioVisualizationMode = .read
+
+            AudioContext.load(fromAudioURL: self.url!) { [weak self] (context) in
+                guard let self = self, let context = context else { return }
+                self.waveView.meteringLevels = context.render(targetSamples: 500)?.compactMap{ $0.sampleFilter }
+                self.waveView.play(for: context.asset.duration.seconds)
+            }
+
             self.playTick()
         default:
             self.cancel()
@@ -110,7 +125,7 @@ class ViewController: UIViewController {
     @objc func recordTick() {
         self.actionButton.setTitle("\(AudioService.shared.recorder.currentTime.stringValue)", for: .normal)
         self.transformButtonScale(with: AudioService.shared.recorder.averagePowerRate)
-        
+        if let level = AudioService.shared.recorder.averagePowerRate { self.waveView.add(meteringLevel: Float(level * 1.5)) }
         self.perform(#selector(self.recordTick), with: nil, afterDelay: 0.1)
     }
     
@@ -180,4 +195,16 @@ extension ViewController {
 
 extension TimeInterval {
     var stringValue: String { String(format: "%0.1f", self) }
+}
+
+extension Float {
+    var sampleFilter: Float {
+        switch self {
+        case 0..<0.1: return self * 0.1
+        case 0..<0.2: return self * 0.2
+        case 0..<0.3: return self * 0.5
+        case 0..<0.4: return self * 0.7
+        default: return self * 0.9
+        }
+    }
 }
