@@ -147,7 +147,7 @@ class ViewController: UIViewController {
             guard let self = self else { return }
             
             if let rate = rate {
-                let value = (rate * 3) + 1.0
+                let value = (rate * 5) + 1.0
                 self.actionButton.transform = .init(scaleX: value, y: value)
             } else {
                 self.actionButton.transform = .identity

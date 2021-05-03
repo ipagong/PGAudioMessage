@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1167076D2CFCE04A6CEE71DFDAD4F6B5 /* AudioService.Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097AB1DE2BD159541392739D3AD9A6BF /* AudioService.Player.swift */; };
-		1F8FF17DC0D28DA1139E3C28215898DF /* AudioContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C216FCD9A2914A5C6B2C5A845CE43E8 /* AudioContext.swift */; };
-		2A4D25233672CCEEC73ECE6BCD2498E0 /* AudioVisualizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE4AC3E0563C40EDCF1B8E2F3ECA84 /* AudioVisualizationView.swift */; };
-		41F5629D4512556A90670693A7FC7B95 /* Chronometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CABFE186DDE4F1BB328752538E4E2D5 /* Chronometer.swift */; };
 		560D5463B6E4827154FF95D7E9854B06 /* PGAudioMessage-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 61883DCBA706C3A30DA7E9214DA38BF4 /* PGAudioMessage-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5AA3BEDB99EB005A6739C531D380E44C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2689EA712E5D78CDDF35E7B1BD8994B6 /* AVFoundation.framework */; };
 		603878F1999BBAA32F78D9ABE154A77C /* Pods-PGAudioMessage_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6858F1E03C598C0E7AEF16DB36536FDE /* Pods-PGAudioMessage_Example-dummy.m */; };
@@ -18,14 +15,10 @@
 		79EC7FF4714065848AF01A16AAE61660 /* Pods-PGAudioMessage_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E60C39E15A48D2B9DF0C16B09C92036C /* Pods-PGAudioMessage_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		803E64C771506D2911E3D0CD876BCA40 /* SoundType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D4373464F1681F95C3C3AE09F66A00 /* SoundType.swift */; };
 		8376E234E94AC481AEA6A2259A2F12EB /* Pods-PGAudioMessage_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D68C042850528B1F7CC17F54037945DF /* Pods-PGAudioMessage_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8DDAFBF7F2C202B3ABB50F76DC9561A7 /* AVAudioFileExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6174F01013216F50FDC0BA3BD0C3FC62 /* AVAudioFileExtensions.swift */; };
 		9BE6EF4970DBD161A27CC296F3F8598E /* PGAudioMessage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BD087E487C24EC7B925531E6B2C564D1 /* PGAudioMessage-dummy.m */; };
-		A9C5BA7B48F250E0D89A3D07D7DAF652 /* AudioVisualizationView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 15F532983E07FBBBED88CEFAED8C9B18 /* AudioVisualizationView.xib */; };
 		AF8077CF0C9E1F2AA53852F792CDAF54 /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1390C84B3A9A98E2D4011E1485D444 /* ErrorType.swift */; };
-		B146A40468B8D37D04DBDB4499D400DE /* BaseNibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D5C23F56D28F407EFDE2FE5250EF58 /* BaseNibView.swift */; };
 		C1B01A0AA00EDA422A9E65D10077F3A7 /* Result+AudioMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF708AFB21803101CD31747580DD6C3 /* Result+AudioMessage.swift */; };
 		C88D324008C56A65AF04E6A9FD715CF3 /* AudioService.Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E736279798F5ECA68559A79B2C197E5 /* AudioService.Recorder.swift */; };
-		C902952FEAB02E9A34C2EF29797BEAED /* AudioService.Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEBEED19F1AAB3A9E4F5B20AEEA7CA4 /* AudioService.Constant.swift */; };
 		CA3449EE086C58AF1BC16661FAC5DC61 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD9787FB7C94A0DC2A516C656509B78 /* Foundation.framework */; };
 		D704148BAEA43C3658CA24183CE2603A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD9787FB7C94A0DC2A516C656509B78 /* Foundation.framework */; };
 		D90443DBBE414EB57E3DDB5D0E0434F9 /* Pods-PGAudioMessage_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BECF48998BD7D8D713BBD0F633AFF14 /* Pods-PGAudioMessage_Tests-dummy.m */; };
@@ -51,48 +44,41 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		010B519EAC704A11412D99B3ACAD7D07 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		010B519EAC704A11412D99B3ACAD7D07 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		05D991916ADC7875F25B68F0B11D0390 /* PGAudioMessage-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PGAudioMessage-Info.plist"; sourceTree = "<group>"; };
 		097AB1DE2BD159541392739D3AD9A6BF /* AudioService.Player.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AudioService.Player.swift; path = PGAudioMessage/Classes/AudioService.Player.swift; sourceTree = "<group>"; };
 		1326AC67496B40F134E68AAB6AE01358 /* Pods-PGAudioMessage_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PGAudioMessage_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		15F532983E07FBBBED88CEFAED8C9B18 /* AudioVisualizationView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = AudioVisualizationView.xib; sourceTree = "<group>"; };
 		185A443F0A4F923FFAC9EB16EF8676B9 /* Pods-PGAudioMessage_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PGAudioMessage_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		1A91282D4001118E6EB508EA40B883CB /* Pods_PGAudioMessage_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PGAudioMessage_Example.framework; path = "Pods-PGAudioMessage_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A91282D4001118E6EB508EA40B883CB /* Pods_PGAudioMessage_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PGAudioMessage_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2689EA712E5D78CDDF35E7B1BD8994B6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		2BD9787FB7C94A0DC2A516C656509B78 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		2DF32EBC8353749FD8D314FB04E7127E /* Pods-PGAudioMessage_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PGAudioMessage_Example-Info.plist"; sourceTree = "<group>"; };
 		368CE427686AA72F53A988F15F8E57E5 /* AudioService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AudioService.swift; path = PGAudioMessage/Classes/AudioService.swift; sourceTree = "<group>"; };
-		3FEBEED19F1AAB3A9E4F5B20AEEA7CA4 /* AudioService.Constant.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AudioService.Constant.swift; path = PGAudioMessage/Classes/AudioService.Constant.swift; sourceTree = "<group>"; };
 		40EB25738603A619954BE91087100521 /* Pods-PGAudioMessage_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PGAudioMessage_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		42BC1AE6FF85FD53C5F4C4D12EB654FB /* Pods-PGAudioMessage_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PGAudioMessage_Example.modulemap"; sourceTree = "<group>"; };
-		45C0EBC530A5A90D8F187C9525A9D83C /* Pods_PGAudioMessage_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PGAudioMessage_Tests.framework; path = "Pods-PGAudioMessage_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5A28B77560547FF6AF2CE6634C0269E6 /* PGAudioMessage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PGAudioMessage.framework; path = PGAudioMessage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5C216FCD9A2914A5C6B2C5A845CE43E8 /* AudioContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AudioContext.swift; sourceTree = "<group>"; };
-		6174F01013216F50FDC0BA3BD0C3FC62 /* AVAudioFileExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AVAudioFileExtensions.swift; sourceTree = "<group>"; };
+		45C0EBC530A5A90D8F187C9525A9D83C /* Pods_PGAudioMessage_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PGAudioMessage_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A28B77560547FF6AF2CE6634C0269E6 /* PGAudioMessage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PGAudioMessage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		61883DCBA706C3A30DA7E9214DA38BF4 /* PGAudioMessage-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PGAudioMessage-umbrella.h"; sourceTree = "<group>"; };
 		6858F1E03C598C0E7AEF16DB36536FDE /* Pods-PGAudioMessage_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PGAudioMessage_Example-dummy.m"; sourceTree = "<group>"; };
 		6B1390C84B3A9A98E2D4011E1485D444 /* ErrorType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ErrorType.swift; path = PGAudioMessage/Classes/ErrorType.swift; sourceTree = "<group>"; };
 		73A8BA927B3D64DC5CC23F2E3CA77868 /* Pods-PGAudioMessage_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PGAudioMessage_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		76DB240E63E13024CC047B8165A00EC4 /* Pods-PGAudioMessage_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PGAudioMessage_Example.release.xcconfig"; sourceTree = "<group>"; };
 		77BF81561FDCAE3062C35496333041ED /* PGAudioMessage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PGAudioMessage.release.xcconfig; sourceTree = "<group>"; };
-		7CABFE186DDE4F1BB328752538E4E2D5 /* Chronometer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Chronometer.swift; sourceTree = "<group>"; };
 		7CD4198C202316394FCC98142A137083 /* PGAudioMessage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PGAudioMessage.debug.xcconfig; sourceTree = "<group>"; };
 		81865621175E6793A8FFB84BFE3E76B0 /* Pods-PGAudioMessage_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PGAudioMessage_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		89AE4AC3E0563C40EDCF1B8E2F3ECA84 /* AudioVisualizationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AudioVisualizationView.swift; sourceTree = "<group>"; };
 		8AF708AFB21803101CD31747580DD6C3 /* Result+AudioMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Result+AudioMessage.swift"; path = "PGAudioMessage/Classes/Result+AudioMessage.swift"; sourceTree = "<group>"; };
 		8E736279798F5ECA68559A79B2C197E5 /* AudioService.Recorder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AudioService.Recorder.swift; path = PGAudioMessage/Classes/AudioService.Recorder.swift; sourceTree = "<group>"; };
 		8F16BC999908A94F1F45FB40A1181BEA /* AudioService.Recorder.Option.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AudioService.Recorder.Option.swift; path = PGAudioMessage/Classes/AudioService.Recorder.Option.swift; sourceTree = "<group>"; };
 		97D4373464F1681F95C3C3AE09F66A00 /* SoundType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SoundType.swift; path = PGAudioMessage/Classes/SoundType.swift; sourceTree = "<group>"; };
 		9BECF48998BD7D8D713BBD0F633AFF14 /* Pods-PGAudioMessage_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PGAudioMessage_Tests-dummy.m"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A6D5C23F56D28F407EFDE2FE5250EF58 /* BaseNibView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BaseNibView.swift; sourceTree = "<group>"; };
-		A8BDA1EBB01688B24BF9F02A8D19A2CA /* PGAudioMessage.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = PGAudioMessage.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A8BDA1EBB01688B24BF9F02A8D19A2CA /* PGAudioMessage.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = PGAudioMessage.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BD087E487C24EC7B925531E6B2C564D1 /* PGAudioMessage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PGAudioMessage-dummy.m"; sourceTree = "<group>"; };
 		BF1C3D54E3CE955DA20020CC138D289B /* Pods-PGAudioMessage_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PGAudioMessage_Tests.modulemap"; sourceTree = "<group>"; };
 		C86B91AACF28F25AB9A4903AE830B5FD /* PGAudioMessage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PGAudioMessage.modulemap; sourceTree = "<group>"; };
 		CA2E2CC802DD03E9134945AB0837DE35 /* Pods-PGAudioMessage_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PGAudioMessage_Example-frameworks.sh"; sourceTree = "<group>"; };
 		CA86EA2C393351CA2065B88893F8E021 /* Pods-PGAudioMessage_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PGAudioMessage_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D46DF1ACF23C65100B050C53C9DC0438 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		D46DF1ACF23C65100B050C53C9DC0438 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D68C042850528B1F7CC17F54037945DF /* Pods-PGAudioMessage_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PGAudioMessage_Tests-umbrella.h"; sourceTree = "<group>"; };
 		DBA15DFD3E57FF2F98FFE9FC1D397F4E /* PGAudioMessage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PGAudioMessage-prefix.pch"; sourceTree = "<group>"; };
 		E2B42BB3C65A736B57A070D27291826B /* Pods-PGAudioMessage_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PGAudioMessage_Example-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -199,20 +185,6 @@
 			name = Pod;
 			sourceTree = "<group>";
 		};
-		B471BE1C99EC128984B3D782C2F19030 /* SoundWave */ = {
-			isa = PBXGroup;
-			children = (
-				5C216FCD9A2914A5C6B2C5A845CE43E8 /* AudioContext.swift */,
-				89AE4AC3E0563C40EDCF1B8E2F3ECA84 /* AudioVisualizationView.swift */,
-				15F532983E07FBBBED88CEFAED8C9B18 /* AudioVisualizationView.xib */,
-				6174F01013216F50FDC0BA3BD0C3FC62 /* AVAudioFileExtensions.swift */,
-				A6D5C23F56D28F407EFDE2FE5250EF58 /* BaseNibView.swift */,
-				7CABFE186DDE4F1BB328752538E4E2D5 /* Chronometer.swift */,
-			);
-			name = SoundWave;
-			path = PGAudioMessage/Classes/SoundWave;
-			sourceTree = "<group>";
-		};
 		C358B7A6AE4575EFA58FB9D320A33ACE /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,7 +224,6 @@
 			isa = PBXGroup;
 			children = (
 				368CE427686AA72F53A988F15F8E57E5 /* AudioService.swift */,
-				3FEBEED19F1AAB3A9E4F5B20AEEA7CA4 /* AudioService.Constant.swift */,
 				097AB1DE2BD159541392739D3AD9A6BF /* AudioService.Player.swift */,
 				8E736279798F5ECA68559A79B2C197E5 /* AudioService.Recorder.swift */,
 				8F16BC999908A94F1F45FB40A1181BEA /* AudioService.Recorder.Option.swift */,
@@ -260,7 +231,6 @@
 				8AF708AFB21803101CD31747580DD6C3 /* Result+AudioMessage.swift */,
 				97D4373464F1681F95C3C3AE09F66A00 /* SoundType.swift */,
 				9DA67A3AC42F9FCA7DB5D185B567D23C /* Pod */,
-				B471BE1C99EC128984B3D782C2F19030 /* SoundWave */,
 				C358B7A6AE4575EFA58FB9D320A33ACE /* Support Files */,
 			);
 			name = PGAudioMessage;
@@ -419,17 +389,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F8FF17DC0D28DA1139E3C28215898DF /* AudioContext.swift in Sources */,
-				C902952FEAB02E9A34C2EF29797BEAED /* AudioService.Constant.swift in Sources */,
 				1167076D2CFCE04A6CEE71DFDAD4F6B5 /* AudioService.Player.swift in Sources */,
 				DCBA0A18942A33EBD0E5E90E934C1D38 /* AudioService.Recorder.Option.swift in Sources */,
 				C88D324008C56A65AF04E6A9FD715CF3 /* AudioService.Recorder.swift in Sources */,
 				728B66B3651547E368EFAACF12F9041F /* AudioService.swift in Sources */,
-				2A4D25233672CCEEC73ECE6BCD2498E0 /* AudioVisualizationView.swift in Sources */,
-				A9C5BA7B48F250E0D89A3D07D7DAF652 /* AudioVisualizationView.xib in Sources */,
-				8DDAFBF7F2C202B3ABB50F76DC9561A7 /* AVAudioFileExtensions.swift in Sources */,
-				B146A40468B8D37D04DBDB4499D400DE /* BaseNibView.swift in Sources */,
-				41F5629D4512556A90670693A7FC7B95 /* Chronometer.swift in Sources */,
 				AF8077CF0C9E1F2AA53852F792CDAF54 /* ErrorType.swift in Sources */,
 				9BE6EF4970DBD161A27CC296F3F8598E /* PGAudioMessage-dummy.m in Sources */,
 				C1B01A0AA00EDA422A9E65D10077F3A7 /* Result+AudioMessage.swift in Sources */,
@@ -785,8 +748,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

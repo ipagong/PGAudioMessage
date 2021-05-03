@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19D59630263F8BD40041DA49 /* AVAudioFileExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D59629263F8BD40041DA49 /* AVAudioFileExtensions.swift */; };
+		19D59631263F8BD40041DA49 /* Chronometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D5962A263F8BD40041DA49 /* Chronometer.swift */; };
+		19D59632263F8BD40041DA49 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 19D5962B263F8BD40041DA49 /* .gitkeep */; };
+		19D59633263F8BD40041DA49 /* AudioVisualizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D5962C263F8BD40041DA49 /* AudioVisualizationView.swift */; };
+		19D59634263F8BD40041DA49 /* AudioContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D5962D263F8BD40041DA49 /* AudioContext.swift */; };
+		19D59635263F8BD40041DA49 /* BaseNibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D5962E263F8BD40041DA49 /* BaseNibView.swift */; };
+		19D59636263F8BD40041DA49 /* AudioVisualizationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19D5962F263F8BD40041DA49 /* AudioVisualizationView.xib */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -29,6 +36,13 @@
 
 /* Begin PBXFileReference section */
 		18A917A88C52581EDCF0440B /* PGAudioMessage.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = PGAudioMessage.podspec; path = ../PGAudioMessage.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		19D59629263F8BD40041DA49 /* AVAudioFileExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVAudioFileExtensions.swift; sourceTree = "<group>"; };
+		19D5962A263F8BD40041DA49 /* Chronometer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chronometer.swift; sourceTree = "<group>"; };
+		19D5962B263F8BD40041DA49 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		19D5962C263F8BD40041DA49 /* AudioVisualizationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioVisualizationView.swift; sourceTree = "<group>"; };
+		19D5962D263F8BD40041DA49 /* AudioContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioContext.swift; sourceTree = "<group>"; };
+		19D5962E263F8BD40041DA49 /* BaseNibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNibView.swift; sourceTree = "<group>"; };
+		19D5962F263F8BD40041DA49 /* AudioVisualizationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudioVisualizationView.xib; sourceTree = "<group>"; };
 		25323A97195A9C35589D59A8 /* Pods-PGAudioMessage_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PGAudioMessage_Example.release.xcconfig"; path = "Target Support Files/Pods-PGAudioMessage_Example/Pods-PGAudioMessage_Example.release.xcconfig"; sourceTree = "<group>"; };
 		438EC33F939CECD964106B85 /* Pods-PGAudioMessage_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PGAudioMessage_Example.debug.xcconfig"; path = "Target Support Files/Pods-PGAudioMessage_Example/Pods-PGAudioMessage_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		4C190A3FB0C18C9F3139F899 /* Pods-PGAudioMessage_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PGAudioMessage_Tests.release.xcconfig"; path = "Target Support Files/Pods-PGAudioMessage_Tests/Pods-PGAudioMessage_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -80,6 +94,20 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		19D59628263F8BD40041DA49 /* SoundWave */ = {
+			isa = PBXGroup;
+			children = (
+				19D59629263F8BD40041DA49 /* AVAudioFileExtensions.swift */,
+				19D5962A263F8BD40041DA49 /* Chronometer.swift */,
+				19D5962B263F8BD40041DA49 /* .gitkeep */,
+				19D5962C263F8BD40041DA49 /* AudioVisualizationView.swift */,
+				19D5962D263F8BD40041DA49 /* AudioContext.swift */,
+				19D5962E263F8BD40041DA49 /* BaseNibView.swift */,
+				19D5962F263F8BD40041DA49 /* AudioVisualizationView.xib */,
+			);
+			path = SoundWave;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +137,7 @@
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				19D59628263F8BD40041DA49 /* SoundWave */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for PGAudioMessage";
@@ -250,7 +279,9 @@
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				19D59636263F8BD40041DA49 /* AudioVisualizationView.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				19D59632263F8BD40041DA49 /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,8 +364,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19D59630263F8BD40041DA49 /* AVAudioFileExtensions.swift in Sources */,
+				19D59635263F8BD40041DA49 /* BaseNibView.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				19D59634263F8BD40041DA49 /* AudioContext.swift in Sources */,
+				19D59631263F8BD40041DA49 /* Chronometer.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				19D59633263F8BD40041DA49 /* AudioVisualizationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

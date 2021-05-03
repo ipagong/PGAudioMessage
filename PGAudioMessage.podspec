@@ -9,18 +9,18 @@
 Pod::Spec.new do |s|
   s.name             = 'PGAudioMessage'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of PGAudioMessage.'
-  s.description      = "Do something"
+  s.summary          = 'Audio Service Module'
+  s.description      = "Simple Audio play & record module"
 
   s.homepage         = 'https://github.com/ipagong/PGAudioMessage'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'ipagong' => 'ipagong.dev@gmail.com' }
   s.source           = { :git => 'https://github.com/ipagong/PGAudioMessage.git', :tag => s.version.to_s }
   s.ios.deployment_target = '11.0'
+  s.swift_version = '5.0'
 
   s.source_files = 'PGAudioMessage/Classes/**/*'
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-#  s.dependency 'AFNetworking', '~> 2.3'
-s.frameworks = 'AVFoundation'
+  s.frameworks = 'AVFoundation'
+  
 end
