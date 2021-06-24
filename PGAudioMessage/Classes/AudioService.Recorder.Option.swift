@@ -53,5 +53,11 @@ extension AudioService.Recorder {
         }
         
         var intValue: Int { Int(self.value) }
+        
+        var ext: String {
+            switch self {
+            case .MPEGAAC: return "aac"
+            }
+        }
     }
 }

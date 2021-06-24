@@ -27,7 +27,7 @@ extension AudioService.Recorder {
     public var currentTime: TimeInterval { self.recorder?.currentTime ?? 0 }
     
     var temporaryURL: URL? {
-        FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("recording.m4a")
+        FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("recording.\(self.options.format.ext)")
     }
     
     public var averagePower: CGFloat? {
