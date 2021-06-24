@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PGAudioMessage'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'Audio Service Module'
   s.description      = "Simple Audio play & record module"
 

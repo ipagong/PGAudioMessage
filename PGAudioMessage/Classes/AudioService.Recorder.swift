@@ -58,6 +58,18 @@ extension AudioService.Recorder {
         }
     }
     
+    public func pause() {
+        guard let recorder = self.recorder else { return }
+        guard recorder.isRecording == true else { return }
+        recorder.pause()
+    }
+    
+    public func resume() {
+        guard let recorder = self.recorder else { return }
+        guard recorder.currentTime != 0 else { return }
+        recorder.record()
+    }
+    
     func stop() {
         guard let recorder = self.recorder, recorder.isRecording == true else { return }
             
