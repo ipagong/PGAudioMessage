@@ -17,7 +17,10 @@ extension AudioService {
         
         private var completion: Completion?
         
-        public var options = Option(numberOfChannels: 1, sampleRate: 44100, qualityType: .high, format: .MPEGAAC)
+        public static var options: AudioService.Option {
+            get { AudioService.shared.options }
+            set { AudioService.shared.options = newValue }
+        }
     }
 }
 
@@ -27,14 +30,14 @@ extension AudioService.Recorder {
     public var currentTime: TimeInterval { self.recorder?.currentTime ?? 0 }
     
     var temporaryURL: URL? {
-        FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("recording.\(self.options.format.ext)")
+        FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("recording.\(Self.options.format.ext)")
     }
     
     public var averagePower: CGFloat? {
         guard let recorder = self.recorder, recorder.isRecording else { return nil }
-        guard self.options.numberOfChannels > 0 else { return nil }
+        guard Self.options.numberOfChannels > 0 else { return nil }
         recorder.updateMeters()
-        return Array(0..<self.options.numberOfChannels).compactMap{ CGFloat(recorder.averagePower(forChannel: $0)) }.reduce(0,+) / CGFloat(self.options.numberOfChannels)
+        return Array(0..<Self.options.numberOfChannels).compactMap{ CGFloat(recorder.averagePower(forChannel: $0)) }.reduce(0,+) / CGFloat(Self.options.numberOfChannels)
     }
     
     public var averagePowerRate: CGFloat? { self.averagePower?.transformToRate() }
@@ -48,7 +51,7 @@ extension AudioService.Recorder {
         self.completion = completion
         
         do {
-            self.recorder = try AVAudioRecorder(url: url, settings: self.options.setting)
+            self.recorder = try AVAudioRecorder(url: url, settings: Self.options.setting)
             self.recorder?.isMeteringEnabled = true
             self.recorder?.delegate = self
             self.recorder?.record()

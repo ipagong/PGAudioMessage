@@ -8,14 +8,15 @@
 import Foundation
 import AVFoundation
 
-extension AudioService.Recorder {
+extension AudioService {
     public struct Option {
         public let numberOfChannels: Int
         public let sampleRate: Int
         public let qualityType: AudioQuality
         public let format: AudioFormat
+        public var bufferSize: AVAudioFrameCount = 1024
         
-        var setting: [String: Any] {
+        public var setting: [String: Any] {
             [
                 AVFormatIDKey: self.format.intValue,
                 AVSampleRateKey: self.sampleRate,
@@ -46,15 +47,15 @@ extension AudioService.Recorder {
     public enum AudioFormat {
         case MPEGAAC
         
-        var value: UInt32 {
+        public var value: UInt32 {
             switch self {
             case .MPEGAAC: return kAudioFormatMPEG4AAC
             }
         }
         
-        var intValue: Int { Int(self.value) }
+        public var intValue: Int { Int(self.value) }
         
-        var ext: String {
+        public var ext: String {
             switch self {
             case .MPEGAAC: return "aac"
             }

@@ -18,6 +18,8 @@ public class AudioService: NSObject {
     public let recorder = Recorder()
     
     public let player = Player()
+    
+    public var options = Option(numberOfChannels: 1, sampleRate: 44100, qualityType: .high, format: .MPEGAAC)
 }
 
 extension AudioService {
