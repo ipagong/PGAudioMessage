@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1167076D2CFCE04A6CEE71DFDAD4F6B5 /* AudioService.Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097AB1DE2BD159541392739D3AD9A6BF /* AudioService.Player.swift */; };
-		195AC5B7269445DB00E45C54 /* AudioService.Mixer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195AC5B6269445DB00E45C54 /* AudioService.Mixer.swift */; };
+		195AC5B7269445DB00E45C54 /* AudioService.Effector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195AC5B6269445DB00E45C54 /* AudioService.Effector.swift */; };
 		560D5463B6E4827154FF95D7E9854B06 /* PGAudioMessage-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 61883DCBA706C3A30DA7E9214DA38BF4 /* PGAudioMessage-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5AA3BEDB99EB005A6739C531D380E44C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2689EA712E5D78CDDF35E7B1BD8994B6 /* AVFoundation.framework */; };
 		603878F1999BBAA32F78D9ABE154A77C /* Pods-PGAudioMessage_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6858F1E03C598C0E7AEF16DB36536FDE /* Pods-PGAudioMessage_Example-dummy.m */; };
@@ -50,7 +50,7 @@
 		097AB1DE2BD159541392739D3AD9A6BF /* AudioService.Player.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AudioService.Player.swift; path = PGAudioMessage/Classes/AudioService.Player.swift; sourceTree = "<group>"; };
 		1326AC67496B40F134E68AAB6AE01358 /* Pods-PGAudioMessage_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PGAudioMessage_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		185A443F0A4F923FFAC9EB16EF8676B9 /* Pods-PGAudioMessage_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PGAudioMessage_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		195AC5B6269445DB00E45C54 /* AudioService.Mixer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.Mixer.swift; sourceTree = "<group>"; };
+		195AC5B6269445DB00E45C54 /* AudioService.Effector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.Effector.swift; sourceTree = "<group>"; };
 		1A91282D4001118E6EB508EA40B883CB /* Pods_PGAudioMessage_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PGAudioMessage_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2689EA712E5D78CDDF35E7B1BD8994B6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		2BD9787FB7C94A0DC2A516C656509B78 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -229,7 +229,7 @@
 				097AB1DE2BD159541392739D3AD9A6BF /* AudioService.Player.swift */,
 				8E736279798F5ECA68559A79B2C197E5 /* AudioService.Recorder.swift */,
 				8F16BC999908A94F1F45FB40A1181BEA /* AudioService.Option.swift */,
-				195AC5B6269445DB00E45C54 /* AudioService.Mixer.swift */,
+				195AC5B6269445DB00E45C54 /* AudioService.Effector.swift */,
 				6B1390C84B3A9A98E2D4011E1485D444 /* ErrorType.swift */,
 				8AF708AFB21803101CD31747580DD6C3 /* Result+AudioMessage.swift */,
 				97D4373464F1681F95C3C3AE09F66A00 /* SoundType.swift */,
@@ -394,7 +394,7 @@
 			files = (
 				1167076D2CFCE04A6CEE71DFDAD4F6B5 /* AudioService.Player.swift in Sources */,
 				DCBA0A18942A33EBD0E5E90E934C1D38 /* AudioService.Option.swift in Sources */,
-				195AC5B7269445DB00E45C54 /* AudioService.Mixer.swift in Sources */,
+				195AC5B7269445DB00E45C54 /* AudioService.Effector.swift in Sources */,
 				C88D324008C56A65AF04E6A9FD715CF3 /* AudioService.Recorder.swift in Sources */,
 				728B66B3651547E368EFAACF12F9041F /* AudioService.swift in Sources */,
 				AF8077CF0C9E1F2AA53852F792CDAF54 /* ErrorType.swift in Sources */,

@@ -21,6 +21,8 @@ extension AudioService {
             get { AudioService.shared.options }
             set { AudioService.shared.options = newValue }
         }
+        
+        private var effector: AudioService.Effector? { didSet { oldValue?.clear() } }
     }
 }
 
@@ -59,18 +61,22 @@ extension AudioService.Recorder {
             debugPrint("recorder internal error ---> \(error)")
             self.stopped(with: self.recorder, error: .internalError(error))
         }
+        
+        self.effector?.start()
     }
     
     public func pause() {
         guard let recorder = self.recorder else { return }
         guard recorder.isRecording == true else { return }
         recorder.pause()
+        self.effector?.pause()
     }
     
     public func resume() {
         guard let recorder = self.recorder else { return }
         guard recorder.currentTime != 0 else { return }
         recorder.record()
+        self.effector?.resume()
     }
     
     func stop() {
@@ -87,6 +93,10 @@ extension AudioService.Recorder {
         
         self.recorder?.stop()
         self.recorder = nil
+        
+        self.effector?.end()
+        self.effector?.clear()
+        self.effector = nil
     }
 }
 
@@ -101,5 +111,11 @@ extension AudioService.Recorder: AVAudioRecorderDelegate {
         debugPrint("\(#function) error: \(String(describing: error))")
         var errorValue: ErrorType { (error == nil ? .unknown : .internalError(error!)) }
         self.stopped(with: recorder, error: errorValue)
+    }
+}
+
+extension AudioService.Recorder {
+    public func addEffector(_ effector: AudioService.Effector) {
+        self.effector = effector
     }
 }
