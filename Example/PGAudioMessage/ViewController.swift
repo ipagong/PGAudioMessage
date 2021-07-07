@@ -29,6 +29,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.updateUI()
+        AudioService.shared.recorder.delegate = self
     }
     
     /*
@@ -59,8 +60,15 @@ class ViewController: UIViewController {
                 guard let self = self else { return }
                 switch result {
                 case .success(let url):
-                    self.url = url
-                    self.status = .recorded
+                    if let mixerUrl = AudioService.shared.recorder.effector?.resultUrl {
+                        debugPrint(mixerUrl)
+                        self.url = mixerUrl
+                        self.status = .recorded
+                    } else {
+                        debugPrint(url)
+                        self.url = url
+                        self.status = .recorded
+                    }
                     
                 case .failure(let error):
                     debugPrint(error)
@@ -103,19 +111,9 @@ class ViewController: UIViewController {
         
         switch self.status {
         case .recording:
-            self.waveView.reset()
-            self.waveView.audioVisualizationMode = .write
             self.recordTick()
+            
         case .playing:
-            self.waveView.reset()
-            self.waveView.audioVisualizationMode = .read
-
-            AudioContext.load(fromAudioURL: self.url!) { [weak self] (context) in
-                guard let self = self, let context = context else { return }
-                self.waveView.meteringLevels = context.render(targetSamples: 500)?.compactMap{ $0.sampleFilter }
-                self.waveView.play(for: context.asset.duration.seconds)
-            }
-
             self.playTick()
         default:
             self.cancel()
@@ -125,7 +123,7 @@ class ViewController: UIViewController {
     @objc func recordTick() {
         self.actionButton.setTitle("\(AudioService.shared.recorder.currentTime.stringValue)", for: .normal)
         self.transformButtonScale(with: AudioService.shared.recorder.averagePowerRate)
-        if let level = AudioService.shared.recorder.averagePowerRate { self.waveView.add(meteringLevel: Float(level * 1.5)) }
+
         self.perform(#selector(self.recordTick), with: nil, afterDelay: 0.1)
     }
     
@@ -206,5 +204,19 @@ extension Float {
         case 0..<0.4: return self * 0.7
         default: return self * 0.9
         }
+    }
+}
+
+extension ViewController: AudioServiceRecorderDelegate {
+    func setupEffect(with recorder: AudioService.Recorder) -> AudioService.Effector? {
+        self.setupEffect()
+    }
+    
+    func setupEffect() -> AudioService.Effector? {
+        let echo = AVAudioUnitDistortion()
+        echo.loadFactoryPreset(.speechCosmicInterference)
+        echo.preGain = 5
+        
+        return AudioService.Effector(effects: [echo], completion: nil)
     }
 }

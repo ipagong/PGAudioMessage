@@ -9,6 +9,14 @@
 import Foundation
 import AVFoundation
 
+public protocol AudioServiceRecorderDelegate: NSObject {
+    func setupEffect(with recorder: AudioService.Recorder) -> AudioService.Effector?
+}
+
+extension AudioServiceRecorderDelegate {
+    public func setupEffect(with recorder: AudioService.Recorder) -> AudioService.Effector? { nil }
+}
+
 extension AudioService {
     final public class Recorder: NSObject {
         public typealias Completion = ((Swift.Result<URL, ErrorType>) -> ())
@@ -22,7 +30,9 @@ extension AudioService {
             set { AudioService.shared.options = newValue }
         }
         
-        private var effector: AudioService.Effector? { didSet { oldValue?.clear() } }
+        public var effector: AudioService.Effector? { didSet { oldValue?.clear() } }
+        
+        public weak var delegate: AudioServiceRecorderDelegate?
     }
 }
 
@@ -52,6 +62,8 @@ extension AudioService.Recorder {
         
         self.completion = completion
         
+        self.effector = self.delegate?.setupEffect(with: self)
+        
         do {
             self.recorder = try AVAudioRecorder(url: url, settings: Self.options.setting)
             self.recorder?.isMeteringEnabled = true
@@ -62,6 +74,7 @@ extension AudioService.Recorder {
             self.stopped(with: self.recorder, error: .internalError(error))
         }
         
+        self.effector?.prepare()
         self.effector?.start()
     }
     
@@ -88,15 +101,15 @@ extension AudioService.Recorder {
     private func stopped(with recorder: AVAudioRecorder?, error: ErrorType?) {
         let url = recorder?.url
         
+        self.effector?.end()
+        
         self.completion?(Swift.Result.init(value: url, error: error))
         self.completion = nil
         
         self.recorder?.stop()
         self.recorder = nil
         
-        self.effector?.end()
         self.effector?.clear()
-        self.effector = nil
     }
 }
 
@@ -111,11 +124,5 @@ extension AudioService.Recorder: AVAudioRecorderDelegate {
         debugPrint("\(#function) error: \(String(describing: error))")
         var errorValue: ErrorType { (error == nil ? .unknown : .internalError(error!)) }
         self.stopped(with: recorder, error: errorValue)
-    }
-}
-
-extension AudioService.Recorder {
-    public func addEffector(_ effector: AudioService.Effector) {
-        self.effector = effector
     }
 }

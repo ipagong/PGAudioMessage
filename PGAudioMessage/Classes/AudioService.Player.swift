@@ -41,6 +41,7 @@ extension AudioService.Player {
     
     func start(with soundType: SoundType, completion: AudioService.Player.Completion? = nil) {
         self.completion = completion
+        
         do {
             self.player = try soundType.createPlayer()
             self.player?.delegate = self
